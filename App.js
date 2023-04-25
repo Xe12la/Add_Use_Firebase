@@ -62,7 +62,7 @@ export default function App() {
           keyExtractor={item => item.id} 
         />
         ):(
-          <ActivityIndicator/>
+          <ActivityIndicator size="large" color="#0000ff" marginTop="5%" />
         )}
       </ScrollView>
       
