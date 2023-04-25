@@ -57,7 +57,7 @@ export default function App() {
         {groceryList.length > 0 ?(
         <FlatList
           data={groceryList}
-          renderItem={({item}) =><Grocery title={item.title}/>}
+          renderItem={({item}) =><Grocery title={item}/>}
           keyExtractor={item => item.id} 
         />
         ):(

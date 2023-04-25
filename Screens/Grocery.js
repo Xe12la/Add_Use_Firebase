@@ -3,7 +3,8 @@ import { Pressable, StyleSheet, Text, View, props } from 'react-native';
 import { AntDesign, SimpleLineIcons,MaterialIcons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 
-const Grocery = (props)=> {
+const Grocery = ({title})=> {
+  console.log(title)
   return (
     <View >
         <View style={styles.container} >
