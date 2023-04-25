@@ -16,6 +16,7 @@ export default function App() {
       });
     
       console.log("Document written with ID: ", docRef.id);
+      setTitle("");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
