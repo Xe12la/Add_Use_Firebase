@@ -1,13 +1,12 @@
+import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { AntDesign, SimpleLineIcons,MaterialIcons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 
 const Grocery = ()=> {
   return (
-    <View>
-      <Text style={{ textAlign: 'center', marginTop: 50, backgroundColor:'blue', marginBottom: 30, borderRadius: 4, width:'90%', alignSelf:'center', height:30 }}>Grocery List</Text>
-      <ScrollView>
-        <View style={styles.container}>
+    <View >
+        <View style={styles.container} >
         <MaterialIcons name="radio-button-unchecked" size={24} color="black" />
           {/* item name*/}
         <Text style={styles.items}>Shampoo</Text>
@@ -22,8 +21,6 @@ const Grocery = ()=> {
         </Pressable> 
 
         </View>
-      </ScrollView>
-      
       <StatusBar style="auto" />
     </View>
   );
@@ -39,7 +36,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
     width:"90%",
     alignSelf:'center',
-    borderRadius: 8
+    borderRadius: 8,
+    marginTop: 20,
 
   },
   items:{
@@ -47,5 +45,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize:18,
     fontWeight:'700'
+
   },
 });
