@@ -8,6 +8,7 @@ import {app, db, getFirestore, collection, addDoc, getDocs} from "./firebase/ind
 
 export default function App() {
   const [title, setTitle] = useState("");
+  const [groceryList, setGroceryList] = useState([]);
 
   const addGroceryItem = async() =>{
     try {
@@ -28,6 +29,10 @@ export default function App() {
     const querySnapshot = await getDocs(collection(db, "grocery"));
     querySnapshot.forEach((doc) => {
     console.log(doc.id , doc.data());
+    setGroceryList({
+      ...doc.data(),
+      id: doc.id,
+    });
 });
   }
 
