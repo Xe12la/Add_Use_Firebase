@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View, props } from 'react-native';
 import { AntDesign, SimpleLineIcons,MaterialIcons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 
-const Grocery = ()=> {
+const Grocery = (props)=> {
   return (
     <View >
         <View style={styles.container} >
         <MaterialIcons name="radio-button-unchecked" size={24} color="black" />
           {/* item name*/}
-        <Text style={styles.items}>Shampoo</Text>
+        <Text style={styles.items}>{props.title}</Text>
 
         {/* Add to Basket*/}
         <Pressable>

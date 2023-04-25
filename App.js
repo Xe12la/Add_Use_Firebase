@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import Grocery from "./Screens/Grocery";
 import { ScrollView } from 'react-native';
 import { useEffect, useState} from 'react';
 import { TextInput } from 'react-native';
 import {app, db, getFirestore, collection, addDoc, getDocs} from "./firebase/index";
+import { FlatList } from 'react-native';
 
 export default function App() {
   const [title, setTitle] = useState("");
@@ -53,10 +54,16 @@ export default function App() {
       onSubmitEditing={addGroceryItem}
       />
       <ScrollView>
-      <Grocery/>
-      <Grocery/>
-      <Grocery/>
-      <Grocery/>
+        {/* create a flatlist*/}
+        {groceryList.length > 0 ?(
+        <FlatList
+          data={groceryList}
+          renderItem={({item}) =><Grocery title={item.title}/>}
+          keyExtractor={item => item.id} 
+        />
+        ):(
+          <ActivityIndicator/>
+        )}
       </ScrollView>
       
     </View>
