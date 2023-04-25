@@ -53,7 +53,6 @@ export default function App() {
       onChangeText={(text) => setTitle(text)}
       onSubmitEditing={addGroceryItem}
       />
-      <ScrollView>
         {/* create a flatlist*/}
         {groceryList.length > 0 ?(
         <FlatList
@@ -64,7 +63,6 @@ export default function App() {
         ):(
           <ActivityIndicator size="large" color="#0000ff" marginTop="5%" />
         )}
-      </ScrollView>
       
     </View>
   );
