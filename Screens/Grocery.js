@@ -30,7 +30,7 @@ export default Grocery;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor:"green",
+    backgroundColor:"#f5a64f",
     justifyContent:'space-between',
     padding:10,
     alignItems:'center',
