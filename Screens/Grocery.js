@@ -1,10 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { AntDesign, SimpleLineIcons,MaterialIcons } from '@expo/vector-icons';
-import { SafeAreaView } from 'react-native';
 import { ScrollView } from 'react-native';
 
-export default function App() {
+const Grocery = ()=> {
   return (
     <View>
       <Text style={{ textAlign: 'center', marginTop: 50, backgroundColor:'blue', marginBottom: 30, borderRadius: 4, width:'90%', alignSelf:'center', height:30 }}>Grocery List</Text>
@@ -30,6 +28,7 @@ export default function App() {
     </View>
   );
 }
+export default Grocery;
 
 const styles = StyleSheet.create({
   container: {

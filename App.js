@@ -4,9 +4,9 @@ import Grocery from "./Screens/Grocery";
 
 export default function App() {
   return (
-    <SafeArray style={styles.container}>
+    <View style={styles.container}>
       <Grocery/>
-    </SafeArray>
+    </View>
   );
 }
 
