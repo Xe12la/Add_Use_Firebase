@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import Grocery from "./Screens/Grocery";
 import { ScrollView } from 'react-native';
-import { useState } from 'react';
+import { useEffect, useState, useEffect } from 'react';
 import { TextInput } from 'react-native';
-import {app, db, getFirestore, collection, addDoc} from "./firebase/index";
+import {app, db, getFirestore, collection, addDoc, getDocs} from "./firebase/index";
 
 export default function App() {
   const [title, setTitle] = useState("");
@@ -22,6 +22,19 @@ export default function App() {
     }
     
   }
+
+  const getGroceryList = async() =>{
+
+    const querySnapshot = await getDocs(collection(db, "grocery"));
+    querySnapshot.forEach((doc) => {
+    console.log(doc.id , doc.data());
+});
+  }
+
+  useEffect(() =>{
+  getGroceryList();
+  }, [ ])
+
   return (
     
     <View style={styles.container}>
