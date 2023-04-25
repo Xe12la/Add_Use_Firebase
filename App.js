@@ -1,20 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeArray } from 'react-native';
 import Grocery from "./Screens/Grocery";
-import { ScrollView } from 'react-native';
+import { ScrollView, useState } from 'react-native';
 import { TextInput } from 'react-native';
-import { useState } from 'react/cjs/react.production.min';
 import {app, db, getFirestore, collection, addDoc} from "./firebase/index";
 
 export default function App() {
-  const [title, setTitle] = useState=("");
+  const [title, setTitle] = useState("");
+
   const addGroceryItem = async() =>{
     try {
       const docRef = await addDoc(collection(db, "grocery"), {
-        first: "Alan",
-        middle: "Mathison",
-        last: "Turing",
-        born: 1912
+      title:title,
       });
     
       console.log("Document written with ID: ", docRef.id);
@@ -33,7 +30,7 @@ export default function App() {
       style={styles.input}
       value={title}
       onChangeText={(text) => setTitle(text)}
-      
+      onSubmitEditing={addGroceryItem}
       />
       <ScrollView>
       <Grocery/>
