@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import Grocery from "./Screens/Grocery";
 import { ScrollView } from 'react-native';
-import { useEffect, useState, useEffect } from 'react';
+import { useEffect, useState} from 'react';
 import { TextInput } from 'react-native';
 import {app, db, getFirestore, collection, addDoc, getDocs} from "./firebase/index";
 
